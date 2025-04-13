@@ -7,7 +7,7 @@ from functools import reduce
     #Returns a function as a result (i.e., functions can be returned as output).
     #Higher-order functions are a fundamental concept in functional programming, and Python supports them fully.
 
-#Key Characteristics of Higher-Order Functions:
+#Key Characteristics of Higher-Order Functions: [both can exist OR only either one can exist]
     #Accepting Functions as Arguments: Functions can be passed as arguments to other functions.
     #Returning Functions: Functions can return other functions.
 
@@ -27,6 +27,28 @@ double = multiplier(2)
 
 # Call the returned function
 print(double(5))  # Output: 10
+
+"""
+Breakdown of the Code:
+
+1.  Higher-Order Function `multiplier(factor)`:
+    - `multiplier()` takes one parameter `factor` and returns a new function that multiplies any input `x` by the given `factor`.
+    - The `lambda x: x * factor` is an anonymous function (a lambda function) that takes `x` as an input and multiplies it by `factor`.
+    - `multiplier()` is a higher-order function because it returns a function that can be called later.
+
+2.  Creating `double`:
+    - `double = multiplier(2)` calls the `multiplier()` function with an argument of `2`.
+    - The returned function (the `lambda x: x * 2`) is then assigned to the variable `double`.
+
+3.  Calling the `double` function:
+    - `double(5)` calls the function that was returned by `multiplier(2)` with `5` as the input.
+    - Inside the lambda function, `5` gets multiplied by `2`, and the result `10` is returned.
+
+Explanation:
+
+- The higher-order function `multiplier` is used to create specialized functions that multiply by a specific factor. In this case, `double` is a function that multiplies its input by `2`.
+- By using higher-order functions, you can dynamically generate functions based on the parameters passed to the higher-order function.
+"""
 
 
 

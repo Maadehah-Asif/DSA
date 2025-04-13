@@ -86,12 +86,12 @@ for keys in Person:
     print(keys,end=",")
 
 
-#Looping Keys Only
+#Looping Values Only
 for values in Person.values():
     print(values,end=",")
 
 print()
-#Looping Keys Only
+#Looping Keys Value Pair 
 for key,values in Person.items():
     print(key,": ",values)
 
